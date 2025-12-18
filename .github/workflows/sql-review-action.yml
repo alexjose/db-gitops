@@ -20,11 +20,11 @@ jobs:
       - name: Check release
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # set GITHUB_TOKEN because the 'Check release' step needs it to comment the pull request with check results.
-            BYTEBASE_URL: https://demo.bytebase.com
-            BYTEBASE_SERVICE_ACCOUNT: api@service.bytebase.com # set service account via environment variable
+            BYTEBASE_URL: http://100.31.193.222:8081
+            BYTEBASE_SERVICE_ACCOUNT: api-user@service.bytebase.com # set service account via environment variable
             BYTEBASE_SERVICE_ACCOUNT_SECRET: ${{ secrets.BYTEBASE_SERVICE_ACCOUNT_SECRET }} # set service account secret via environment variable
-            BYTEBASE_PROJECT: "projects/hr"
-            BYTEBASE_TARGETS: "instances/prod-sample-instance/databases/hr_prod"
+            BYTEBASE_PROJECT: "projects/rqi1stop"
+            BYTEBASE_TARGETS: "instances/rqi1stop/databases/rqi1stop"
             FILE_PATTERN: "migrations-semver/*.sql"
         run: |
           bytebase-action check --url=${{ env.BYTEBASE_URL }} --project=${{ env.BYTEBASE_PROJECT }} --targets=${{ env.BYTEBASE_TARGETS }} --file-pattern=${{ env.FILE_PATTERN }}
