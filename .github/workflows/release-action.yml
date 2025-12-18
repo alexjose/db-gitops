@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "migrations-semver/*.sql"
 
 env:
   BYTEBASE_URL: http://100.31.193.222:8081/
@@ -37,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Roll out database change
         env:
-          BYTEBASE_TARGETS: "instances/rqi1stop/databases/rqi1stop"
+          BYTEBASE_TARGETS: "instances/rqi1stop/databases/rqi1stop, instances/rqi1stop/databases/llp_eu"
           FILE_PATTERN: "migrations-semver/*.sql"
           BYTEBASE_OUTPUT: ${{ runner.temp }}/bytebase-metadata.json
         run: |
