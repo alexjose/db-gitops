@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Roll out database change
         env:
-          BYTEBASE_TARGETS: "instances/rqi1stop/databases/rqi1stop,instances/rqi1stop/databases/llp_eu"
+          BYTEBASE_TARGETS: "instances/rqi1stop/databases/rqi1stop,instances/llp-au/databases/llp_eu"
           FILE_PATTERN: "migrations-semver/*.sql"
           BYTEBASE_OUTPUT: ${{ runner.temp }}/bytebase-metadata.json
         run: |
