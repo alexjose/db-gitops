@@ -14,10 +14,10 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BYTEBASE_URL: https://demo.bytebase.com
-  BYTEBASE_SERVICE_ACCOUNT: api@service.bytebase.com # set service account via environment variable
+  BYTEBASE_URL: http://100.31.193.222:8081
+  BYTEBASE_SERVICE_ACCOUNT: api-user@service.bytebase.com # set service account via environment variable
   BYTEBASE_SERVICE_ACCOUNT_SECRET: ${{ secrets.BYTEBASE_SERVICE_ACCOUNT_SECRET }} # set service account secret via environment variable
-  BYTEBASE_PROJECT: "projects/hr"
+  BYTEBASE_PROJECT: "projects/rqi1stop"
 
 jobs:
   build:
